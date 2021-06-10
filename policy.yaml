@@ -1,0 +1,47 @@
+---
+# one
+apiVersion: compliance.openshift.io/v1alpha1
+kind: ScanSettingBinding
+metadata:
+  name: cis-default
+  namespace: openshift-compliance
+profiles:
+  - apiGroup: compliance.openshift.io/v1alpha1
+    kind: Profile
+    name: ocp4-cis
+settingsRef:
+  apiGroup: compliance.openshift.io/v1alpha1
+  kind: ScanSetting
+  name: default
+
+---
+# two
+apiVersion: compliance.openshift.io/v1alpha1
+kind: ScanSettingBinding
+metadata:
+  name: cis-node
+  namespace: openshift-compliance
+profiles:
+  - apiGroup: compliance.openshift.io/v1alpha1
+    kind: Profile
+    name: ocp4-cis-node
+settingsRef:
+  apiGroup: compliance.openshift.io/v1alpha1
+  kind: ScanSetting
+  name: default
+
+---
+# three
+apiVersion: compliance.openshift.io/v1alpha1
+kind: ScanSettingBinding
+metadata:
+  name: nist-moderate
+  namespace: openshift-compliance
+profiles:
+  - apiGroup: compliance.openshift.io/v1alpha1
+    kind: Profile
+    name: rhcos4-moderate
+settingsRef:
+  apiGroup: compliance.openshift.io/v1alpha1
+  kind: ScanSetting
+  name: default
